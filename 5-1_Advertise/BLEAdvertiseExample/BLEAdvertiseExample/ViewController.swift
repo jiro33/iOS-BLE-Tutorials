@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var advertiseBtn: UIButton!
     private var peripheralManager: CBPeripheralManager!
+    private var peripheralManager2: CBPeripheralManager!
     private var currentService: CBMutableService?
 
     override func viewDidLoad() {
@@ -21,6 +22,10 @@ class ViewController: UIViewController {
         // ペリフェラルマネージャ初期化
         peripheralManager = CBPeripheralManager(
             delegate: self,
+            queue: nil,
+            options: nil)
+        peripheralManager2 = CBPeripheralManager(
+            delegate: nil,
             queue: nil,
             options: nil)
     }
@@ -87,6 +92,13 @@ extension ViewController: CBPeripheralManagerDelegate {
             return
         }
         print("アドバタイズ開始成功！")
+
+        // アドバタイズメントデータを作成する
+        let serviceUUID = CBUUID(string: "00000000-0000-0000-0000-000000000039")
+        let advertisementData = [CBAdvertisementDataServiceUUIDsKey: [serviceUUID]]
+
+        // アドバタイズ開始
+        peripheralManager2.startAdvertising(advertisementData)
     }
 
     private func publishService() {
