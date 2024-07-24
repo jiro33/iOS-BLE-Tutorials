@@ -14,12 +14,14 @@ class ViewController: UIViewController {
 
     var isScanning = false
     var centralManager: CBCentralManager!
-    
+    var centralManager2: CBCentralManager!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // セントラルマネージャ初期化
         centralManager = CBCentralManager(delegate: self, queue: nil)
+        centralManager2 = CBCentralManager(delegate: self, queue: nil)
     }
     
     // MARK: - Actions
@@ -31,6 +33,7 @@ class ViewController: UIViewController {
 
             let serviceUUID = CBUUID(string: "B36F4066-2EF7-467E-832D-8CBFF563BBBB")
             centralManager.scanForPeripherals(withServices: [serviceUUID])
+            centralManager2.scanForPeripherals(withServices: [CBUUID(string: "00000000-0000-0000-0000-000000000039")])
         } else {
             centralManager.stopScan()
             
