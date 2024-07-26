@@ -94,7 +94,7 @@ extension ViewController: CBPeripheralManagerDelegate {
         print("アドバタイズ開始成功！")
 
         // アドバタイズメントデータを作成する
-        let serviceUUID = CBUUID(string: "00000000-0000-0000-0000-000000000039")
+        let serviceUUID = CBUUID(string: "B36F4066-2EF7-467E-832D-8CBFF563BBB7")
         let advertisementData = [CBAdvertisementDataServiceUUIDsKey: [serviceUUID]]
 
         // アドバタイズ開始
