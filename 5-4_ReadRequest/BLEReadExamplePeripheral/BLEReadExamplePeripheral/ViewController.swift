@@ -45,9 +45,11 @@ class ViewController: UIViewController {
         peripheralManager.add(service)
 
         // 値をセット
-        let value = UInt8(arc4random() & 0xFF)
-        let data = Data([value])
-        characteristic.value = data
+//        let value = UInt8(arc4random() & 0xFF)
+//        let data = Data([value])
+//        characteristic.value = data
+        let hash = "651DB1F5D4E844C2AE9C3BC62541080B"
+        characteristic.value = hash.data(using: .utf8)
     }
     
     private func startAdvertise() {

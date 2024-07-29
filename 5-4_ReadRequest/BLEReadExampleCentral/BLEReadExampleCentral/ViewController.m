@@ -135,6 +135,9 @@
     
     NSLog(@"読み出し成功！service uuid:%@, characteristice uuid:%@, value%@",
           characteristic.service.UUID, characteristic.UUID, characteristic.value);
+
+    NSString *string = [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding];
+    NSLog(@"読み出しデータ！ %@", string);
 }
 
 
