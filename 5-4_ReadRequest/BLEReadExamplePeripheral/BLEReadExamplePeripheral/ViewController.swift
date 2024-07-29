@@ -27,11 +27,11 @@ class ViewController: UIViewController {
     
     private func publishservice () {
         // サービスを作成
-        serviceUUID = CBUUID(string: "0000")
+        serviceUUID = CBUUID(string: "ad940b5f-4115-4a59-aa5d-c956bfb300b2")
         let service = CBMutableService(type: serviceUUID, primary: true)
 
         // キャラクタリスティックを作成
-        let characteristicUUID = CBUUID(string: "0001")
+        let characteristicUUID = CBUUID(string: "451574c5-4512-4b88-82d7-2044d612f0c6")
         characteristic = CBMutableCharacteristic(
             type: characteristicUUID,
             properties: .read,

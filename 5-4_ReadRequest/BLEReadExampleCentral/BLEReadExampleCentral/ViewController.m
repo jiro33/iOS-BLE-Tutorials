@@ -113,7 +113,7 @@
     NSLog(@"%lu 個のキャラクタリスティックを発見！%@", (unsigned long)characteristics.count, characteristics);
 
     // 特定のキャラクタリスティックをプロパティに保持
-    CBUUID *uuid = [CBUUID UUIDWithString:@"0001"];
+    CBUUID *uuid = [CBUUID UUIDWithString:@"451574c5-4512-4b88-82d7-2044d612f0c6"];
     for (CBCharacteristic *aCharacteristic in characteristics) {
         
         if ([aCharacteristic.UUID isEqual:uuid]) {
@@ -151,7 +151,7 @@
         isScanning = YES;
         
         // スキャン開始（特定サービスを持つペリフェラルに限定）
-        [self.centralManager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:@"0000"]]
+        [self.centralManager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:@"ad940b5f-4115-4a59-aa5d-c956bfb300b2"]]
                                                     options:nil];
         [sender setTitle:@"STOP SCAN" forState:UIControlStateNormal];
     }
